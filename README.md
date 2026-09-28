@@ -12,7 +12,9 @@ Gestión de reservas de canchas, consulta de disponibilidad, calculo de importe 
     
 - Descripción: 
     POST: Crea una nueva reserva
+  
     GET: Consulta las reservas existentes o por ID
+  
     PUT: Actualiza el estado de una reserva
 
 ### Códigos de respuesta
