@@ -72,13 +72,13 @@ Reserva por id de la tabla reservas:
 
 GET /reservas/1
 
-si se quiere ver todas las reservas con el id del socio o cancha correspondiente
+si se quiere ver todas las reservas con el id del socio o cancha correspondiente:
 
 GET /reservas?id_cancha=1
 
 GET /reservas?id_socio=2
 
-filtrado por fecha
+filtrado por fecha:
 
 GET /reservas?fecha=2026-11-10
 
