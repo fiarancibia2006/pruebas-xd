@@ -84,5 +84,6 @@ Si la reserva existe, se actualiza el estado correctamente. Si no existe, la API
 
 ### Supuestos
 -Las reservas en estado cancelada liberan el horario para nuevas reservas o bloqueos.
+
 -La tarifa final de la reserva se calcula dinámicamente multiplicando las horas por el precio por hora de la cancha.
 
