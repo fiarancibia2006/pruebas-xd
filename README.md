@@ -65,12 +65,19 @@ Respuesta exitosa:
 Se pueden consultar todas las reservas, obtener una por ID o aplicar filtros de búsqueda:
 
 GET /reservas
+
 Reserva por id de la tabla reservas:
+
 GET /reservas/1
+
 si se quiere ver todas las reservas con el id del socio o cancha correspondiente
+
 GET /reservas?id_cancha=1
+
 GET /reservas?id_socio=2
+
 filtrado por fecha
+
 GET /reservas?fecha=2026-11-10
 
 Modificación de estado por el id tabla reservas:
