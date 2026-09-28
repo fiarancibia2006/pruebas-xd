@@ -48,6 +48,8 @@ Content-Type: application/json
   "fecha_hora_inicio": "2026-11-10T14:00:00-03:00",
   "fecha_hora_fin": "2026-11-10T15:00:00-03:00"
 }
+Respuesta exitosa:
+
 {
   "id": 1,
   "id_socio": 1,
@@ -57,13 +59,21 @@ Content-Type: application/json
   "fecha_hora_fin": "2026-11-10T15:00:00-03:00",
   "importe": 7500.0
 }
-GET /club_api/reservas
-GET /club_api/reservas?_limit=10&_offset=0
-GET /club_api/reservas/1
+Se pueden consultar las reservas filtrando por su estado o por un rango de fechas:
+GET /club_api/reservas?estado=confirmada
+GET /club_api/reservas?fecha_inicio=2026-11-01&fecha_fin=2026-11-30
 
+Modificación de estado:
 PUT /club_api/reservas/1/estado
 Content-Type: application/json
 
 {
   "estado": "cancelada"
 }
+
+Si la reserva existe, se actualiza el estado correctamente. Si no existe, la API devuelve 404
+
+Supuestos
+Las reservas en estado cancelada liberan el horario para nuevas reservas o bloqueos.
+
+La tarifa final de la reserva se calcula dinámicamente multiplicando las horas por el precio por hora de la cancha.
