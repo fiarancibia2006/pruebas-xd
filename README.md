@@ -39,7 +39,7 @@ Gestión de reservas de canchas, consulta de disponibilidad, calculo de importe 
 ### Ejemplo de creación
 
 ```json
-POST /club_api/reservas
+POST /reservas
 Content-Type: application/json
 
 {
