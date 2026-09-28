@@ -59,9 +59,16 @@ Respuesta exitosa:
   "fecha_hora_fin": "2026-11-10T15:00:00-03:00",
   "importe": 7500.0
 }
-Se pueden consultar las reservas filtrando por su estado o por un rango de fechas:
+### Consulta
+
+Se pueden consultar todas las reservas, obtener una por ID o aplicar filtros de búsqueda:
+
+GET /club_api/reservas
+GET /club_api/reservas/1
+GET /club_api/reservas?id_cancha=1
+GET /club_api/reservas?id_socio=2
+GET /club_api/reservas?fecha=2026-11-10
 GET /club_api/reservas?estado=confirmada
-GET /club_api/reservas?fecha_inicio=2026-11-01&fecha_fin=2026-11-30
 
 Modificación de estado:
 PUT /club_api/reservas/1/estado
