@@ -7,8 +7,8 @@ Gestión de reservas de canchas, consulta de disponibilidad, calculo de importe 
 - Metodos : POST, GET y PUT.
 
 - Endpoint: 
-    POST y GET: /club_api/reservas
-    GET y PUT: /club_api/reservas/{id}
+    POST y GET: /reservas
+    GET y PUT: /reservas/{id}
     
 - Descripción: 
     POST: Crea una nueva reserva
@@ -38,7 +38,7 @@ Gestión de reservas de canchas, consulta de disponibilidad, calculo de importe 
 
 ### Ejemplo de creación
 
-```http
+```json
 POST /club_api/reservas
 Content-Type: application/json
 
@@ -59,28 +59,38 @@ Respuesta exitosa:
   "fecha_hora_fin": "2026-11-10T15:00:00-03:00",
   "importe": 7500.0
 }
+```
 ### Consulta
 
 Se pueden consultar todas las reservas, obtener una por ID o aplicar filtros de búsqueda:
 
-GET /club_api/reservas
-GET /club_api/reservas/1
-GET /club_api/reservas?id_cancha=1
-GET /club_api/reservas?id_socio=2
-GET /club_api/reservas?fecha=2026-11-10
-GET /club_api/reservas?estado=confirmada
+GET /reservas
+Reserva por id de la tabla reservas:
+GET /reservas/1
+si se quiere ver todas las reservas con el id del socio o cancha correspondiente
+GET /reservas?id_cancha=1
+GET /reservas?id_socio=2
+filtrado por fecha
+GET /reservas?fecha=2026-11-10
 
-Modificación de estado:
-PUT /club_api/reservas/1/estado
+Modificación de estado por el id tabla reservas:
+PUT /reservas/1/estado
 Content-Type: application/json
-
+```json
 {
   "estado": "cancelada"
 }
+```
+Aplica lo mismo pero con finalizada:
+```json
+{
+  "estado": "finalizada"
+}
+```
 
 Si la reserva existe, se actualiza el estado correctamente. Si no existe, la API devuelve 404
 
-```
+
 
 ### Supuestos
 -Las reservas en estado cancelada liberan el horario para nuevas reservas o bloqueos.
