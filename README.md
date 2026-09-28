@@ -80,6 +80,7 @@ Content-Type: application/json
 
 Si la reserva existe, se actualiza el estado correctamente. Si no existe, la API devuelve 404
 
+```
 
 ### Supuestos
 -Las reservas en estado cancelada liberan el horario para nuevas reservas o bloqueos.
